@@ -7,10 +7,10 @@
                     <img src="static/image/logo.png">
                 </div>
                 <ul class="category">
-                    <li>博客</li>
-                    <li>记事薄</li>
-                    <li>八嘎哥的</li>
-                    <li>杂</li>
+                    <li><a href="#"><span>博客</span></a></li>
+                    <li><a href="#"><span>记事薄</span></a></li>
+                    <li><a href="#"><span>八嘎哥的</span></a></li>
+                    <li><a href="#"><span>杂</span></a></li>
                 </ul>
             </div>
             <div class="banner">
@@ -100,22 +100,22 @@
             <input type="text" placeholder="搜索" />
             <div class="tags">
                 <ul>
-                    <li>工作(21)</li>
-                    <li>学习(34)</li>
-                    <li>娱乐(12)</li>
-                    <li>心情(4)</li>
-                    <li>随拍(132)</li>
-                    <li>其他(34)</li>
+                    <li><a href="#"><i class="iconfont icon-gongzuo" ></i><span>工作(21)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-iconxuexinor" ></i><span>学习(34)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-wenhuayule" ></i><span>娱乐(12)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-yule" ></i><span>心情(4)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-picture" ></i><span>随拍(13)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-other" ></i><span>其他(34)</span></a></li>
                 </ul>
             </div>
-            <div class="hot-header"><span>热门阅读</span></div>
+            <div class="hot-header"><i class="iconfont icon-hotfill"></i><span>热门阅读</span></div>
             <div class="artcle-list">
                 <ul>
-                    <li>今天的我很开心</li>
-                    <li>2020年的最后一天，我完成...</li>
-                    <li>2020年的最后一场雪</li>
-                    <li>2020年的倒数第二场雪</li>
-                    <li>2020年的最后一场雪</li>
+                    <li><div class="t1 title"><i>1</i></div><a href="#"><span>今天的我很开心</span></a></li>
+                    <li><div class="t2 title"><i>2</i></div><a href="#"><span>2020年，我完成...</span></a></li>
+                    <li><div class="t3 title"><i>3</i></div><a href="#"><span>2020年的最后一场雪</span></a></li>
+                    <li><div class="t4 title"><i>4</i></div><a href="#"><span>2020年的倒数第二场雪</span></a></li>
+                    <li><div class="t5 title"><i>5</i></div><a href="#"><span>2020年的最后一场雪</span></a></li>
                 </ul>
             </div>
         </aside>
@@ -128,6 +128,9 @@
 </template>
 
 <style scoped>
+    a {
+        text-decoration: none;
+    }
     .clearfix:after {/*伪元素是行内元素 正常浏览器清除浮动方法*/
         content: "";
         display: block;
@@ -175,6 +178,19 @@
          padding: 0 30px 0 30px;
          font-size:25px;
          font-weight: bold;
+         color: #505050;
+    }
+
+    .header .category li a {
+         color: #505050;
+    }
+
+    .header .category li:hover {
+        background-color: #ff5733;
+    }
+
+    .header .category li:hover a {
+        color: #f2f0f4;
     }
 
     .banner {
@@ -276,15 +292,42 @@
     .sidebar .tags li {
         display: inline-block;
         list-style: none;
-        margin: 10px 50px 10px 0;
+        margin: 10px 30px 10px 0;
+        background-color: #a6a6a6;
+    }
+
+    .sidebar .tags li i {
+        color: #505050;
+    }
+
+    .sidebar .tags li span {
+        padding-left: 5px;
+        color: #505050;
+    }
+
+    .sidebar .tags li:hover {
+        background-color: tomato;
+    }
+
+    .sidebar .tags li:hover span {
+        color: white;
+    }
+
+    .sidebar .tags li:hover i {
+        color: white;
     }
 
     .sidebar .hot-header {
         margin-top: 50px;
         margin-bottom: 30px;
-        width: 75%;
+        width: 35%;
         margin-left:auto;
         margin-right:auto;
+        background-color: skyblue;
+    }
+
+    .sidebar .hot-header span {
+        padding-left: 15px;
     }
 
     .sidebar .artcle-list {
@@ -296,6 +339,42 @@
     .sidebar .artcle-list li {
         list-style: none;
         margin-bottom: 20px;
+    }
+
+     .sidebar .artcle-list li .title {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    .sidebar .artcle-list li .t1 {
+        background-color: #ff5733;
+    }
+
+    .sidebar .artcle-list li .t2 {
+        background-color: #fb856d;
+    }
+
+    .sidebar .artcle-list li .t3 {
+        background-color: #f7b3a6;
+    }
+
+    .sidebar .artcle-list li span {
+        padding-left: 10px;
+    }
+
+    .sidebar .artcle-list li:hover {
+        background-color: tomato;
+    }
+
+    .sidebar .artcle-list li:hover span {
+        color: white;
+    }
+
+    .sidebar .artcle-list li:hover i {
+        color: white;
     }
 
     .footer {
