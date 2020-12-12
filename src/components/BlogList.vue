@@ -276,11 +276,17 @@
 
     .sidebar input {
         display: block;
-        margin-left:auto;
-        margin-right:auto;
+        /* margin-left:auto;
+        margin-right:auto; */
         margin-bottom: 60px;
+        margin-left: 39px;
         height: 25px;
+        width: 100px;
+    }
+
+    .sidebar input:focus {
         width: 200px;
+        transition: width 1s;
     }
 
     .sidebar .tags {
