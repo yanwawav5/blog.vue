@@ -166,7 +166,13 @@
                     <li><a href="#"><i class="iconfont icon-other" ></i><span>其他(34)</span></a></li>
                 </ul>
             </div>
-            <div class="hot-header"><i class="iconfont icon-hotfill"></i><span>热门阅读</span></div>
+            <div class="hot-header">
+                 <svg class="icon closeImg" aria-hidden="true">
+                    <use xlink:href="#icon-hotfill"></use>
+                </svg>
+                <!-- <i class="iconfont icon-hotfill"></i> -->
+                <span>热门阅读</span>
+            </div>
             <div class="artcle-list">
                 <ul>
                     <li><div class="t1 title"><i>1</i></div><a href="#"><span>今天的我很开心</span></a></li>
@@ -196,6 +202,7 @@
 
     a {
         text-decoration: none;
+        color: #505050;
     }
     .clearfix:after {/*伪元素是行内元素 正常浏览器清除浮动方法*/
         content: "";
@@ -449,21 +456,26 @@
 
     .sidebar .tags li {
         display: inline-block;
+        /* width: 87px; */
         list-style: none;
         margin: 10px 30px 10px 0;
-        background-color: #a6a6a6;
+        /* background-color: #a6a6a6; */
     }
 
     .sidebar .tags li i {
         color: #505050;
+        padding-right: 5px;
     }
 
     .sidebar .tags li span {
-        padding-left: 5px;
+        display: inline-block;
+        text-align: center;
+        width: 67px;
         color: #505050;
+        background-color: #ccc7c7;
     }
 
-    .sidebar .tags li:hover {
+    .sidebar .tags span:hover {
         background-color: tomato;
     }
 
@@ -471,21 +483,14 @@
         color: white;
     }
 
-    .sidebar .tags li:hover i {
-        color: white;
-    }
-
     .sidebar .hot-header {
-        margin-top: 50px;
-        margin-bottom: 30px;
-        width: 35%;
-        margin-left:auto;
-        margin-right:auto;
-        background-color: skyblue;
+        margin: 50px 0 30px 39px;
+        width: 30%;
+        background-color: #ccc7c7;
     }
 
     .sidebar .hot-header span {
-        padding-left: 15px;
+        padding-left: 6px;
     }
 
     .sidebar .artcle-list {
@@ -509,14 +514,27 @@
 
     .sidebar .artcle-list li .t1 {
         background-color: #ff5733;
+        color: white;
     }
 
     .sidebar .artcle-list li .t2 {
         background-color: #fb856d;
+        color: white;
     }
 
     .sidebar .artcle-list li .t3 {
         background-color: #f7b3a6;
+        color: white;
+    }
+
+     .sidebar .artcle-list li .t4 {
+        background-color: #ccc7c7;
+        color: white;
+    }
+
+     .sidebar .artcle-list li .t5 {
+        background-color: #ccc7c7;
+        color: white;
     }
 
     .sidebar .artcle-list li span {
