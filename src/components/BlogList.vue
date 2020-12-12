@@ -1,18 +1,18 @@
 <template>
 <div>
     <div class="container clearfix">
-        <div class="main">
-            <div class="header clearfix">
-                <div class="logo">
-                    <img src="static/image/logo.png">
-                </div>
-                <ul class="category">
-                    <li><a href="#"><span>博客</span></a></li>
-                    <li><a href="#"><span>记事薄</span></a></li>
-                    <li><a href="#"><span>八嘎哥的</span></a></li>
-                    <li><a href="#"><span>杂</span></a></li>
-                </ul>
+        <div class="header clearfix">
+            <div class="logo">
+                <img src="static/image/logo.png">
             </div>
+            <ul class="category">
+                <li><a href="#"><span>博客</span></a></li>
+                <li><a href="#"><span>记事薄</span></a></li>
+                <li><a href="#"><span>八嘎哥的</span></a></li>
+                <li><a href="#"><span>杂</span></a></li>
+            </ul>
+        </div>
+        <div class="main">
             <div class="banner">
                 <img src="static/image/banner.png">
             </div>
@@ -169,6 +169,12 @@
         border-right: 2px dashed #a6a6a6;
     }
 
+    .header {
+        position: fixed;
+        background-color: #f2f0f4;
+        width: 100%;
+    }
+
     .header .logo {
         float: left;
         max-width: 100px;
@@ -206,6 +212,10 @@
 
     .header .category li:hover a {
         color: #f2f0f4;
+    }
+
+    .main {
+        padding-top: 50px;
     }
 
     .banner {
