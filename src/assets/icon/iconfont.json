@@ -6,6 +6,97 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "869115",
+      "name": "大已回复",
+      "font_class": "dayihuifu",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "1048856",
+      "name": "回复",
+      "font_class": "icon_reply",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1082876",
+      "name": "常用回复2",
+      "font_class": "changyonghuifu2",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "4735281",
+      "name": "icon_回复2-面",
+      "font_class": "icon_huifu-mian",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "4735288",
+      "name": "icon_回复1-面",
+      "font_class": "icon_huifu-mian1",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "493509",
+      "name": "回复",
+      "font_class": "huifu",
+      "unicode": "e7ac",
+      "unicode_decimal": 59308
+    },
+    {
+      "icon_id": "918721",
+      "name": "空爱心",
+      "font_class": "kongaixin",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "2676767",
+      "name": "回复",
+      "font_class": "huifu1",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "2742629",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "3544185",
+      "name": "回复",
+      "font_class": "ico_home_reply",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "7560058",
+      "name": "点赞",
+      "font_class": "dianzan1",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "8288959",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e85c",
+      "unicode_decimal": 59484
+    },
+    {
+      "icon_id": "18239816",
+      "name": "点赞",
+      "font_class": "dianzan2",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
       "icon_id": "240128",
       "name": "hot_fill",
       "font_class": "hotfill",

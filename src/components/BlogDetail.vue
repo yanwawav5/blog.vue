@@ -57,7 +57,14 @@
                 <span class="tag-area">相关标签：</span>
                 <div class="tags"><button type="button">工作</button><button type="button">生活</button></div>
             </div>
-            <div class="number"><span>21条评论</span><span><i></i>个人觉得很赞</span></div>
+            <div class="number"><span>21条评论</span>
+                <span>
+                    <svg class="icon closeImg" aria-hidden="true">
+                        <use xlink:href="#icon-aixin"></use>
+                    </svg>
+                    12个人觉得很赞
+                </span>
+            </div>
             <div class="comment-list">
                 <ul>
                     <li>
@@ -75,8 +82,8 @@
                                     需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新</span></div>
                                 <div class="otherinfo">
                                     <span class="date"><i>2020/10/28  12:23:20</i></span>
-                                    <span class="reply-btn"><i></i>回复</span>
-                                    <span class="like-btn"><i></i>赞(14)</span>
+                                    <span class="reply-btn"><i class="iconfont icon-icon_reply"></i>回复</span>
+                                    <span class="like-btn"><i class="iconfont icon-dianzan"></i>赞(14)</span>
                                 </div>
                             </div>
                         </div>
@@ -96,8 +103,8 @@
                                     需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新</span></div>
                                 <div class="otherinfo">
                                     <span class="date"><i>2020/10/28  12:23:20</i></span>
-                                    <span class="reply-btn"><i></i>回复</span>
-                                    <span class="like-btn"><i></i>赞(14)</span>
+                                    <span class="reply-btn"><i class="iconfont icon-icon_reply"></i>回复</span>
+                                    <span class="like-btn"><i class="iconfont icon-dianzan"></i>赞(14)</span>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +124,8 @@
                                     需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新</span></div>
                                 <div class="otherinfo">
                                     <span class="date"><i>2020/10/28  12:23:20</i></span>
-                                    <span class="reply-btn"><i></i>回复</span>
-                                    <span class="like-btn"><i></i>赞(14)</span>
+                                    <span class="reply-btn"><i class="iconfont icon-icon_reply"></i>回复</span>
+                                    <span class="like-btn"><i class="iconfont icon-dianzan"></i>赞(14)</span>
                                 </div>
                             </div>
                         </div>
@@ -138,8 +145,8 @@
                                     需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新</span></div>
                                 <div class="otherinfo">
                                     <span class="date"><i>2020/10/28  12:23:20</i></span>
-                                    <span class="reply-btn"><i></i>回复</span>
-                                    <span class="like-btn"><i></i>赞(14)</span>
+                                    <span class="reply-btn"><i class="iconfont icon-icon_reply"></i>回复</span>
+                                    <span class="like-btn"><i class="iconfont icon-dianzan"></i>赞(14)</span>
                                 </div>
                             </div>
                         </div>
@@ -179,6 +186,14 @@
 </template>
 
 <style scoped>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
     a {
         text-decoration: none;
     }
@@ -376,11 +391,19 @@
 
     .comment .message .otherinfo .date {
         font-size: 13px;
-        margin-right: 240px;
+        margin-right: 200px;
+    }
+
+    .comment .message .otherinfo .reply-btn i {
+        margin-right: 10px;
     }
 
     .comment .message .otherinfo .reply-btn {
         margin-right: 160px;
+    }
+
+    .comment .message .otherinfo .like-btn i {
+        margin-right: 10px;
     }
     /* .message .userinfo .floor {
         float: right;

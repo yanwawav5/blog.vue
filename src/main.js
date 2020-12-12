@@ -12,3 +12,4 @@ new Vue({
 })
 
 import './assets/icon/iconfont.css'
+import './assets/icon/iconfont.js'
