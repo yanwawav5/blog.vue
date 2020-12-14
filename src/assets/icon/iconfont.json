@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1046327",
+      "name": "详情",
+      "font_class": "xiangqing",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1110588",
+      "name": "详情",
+      "font_class": "xiangqing1",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "7463938",
+      "name": "详情",
+      "font_class": "xiangqing2",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
       "icon_id": "970064",
       "name": "好房拓 4.0.0 iconfont_返回顶部",
       "font_class": "haofangtuo400iconfontfanhuidingbu",

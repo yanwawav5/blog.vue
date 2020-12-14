@@ -3,7 +3,7 @@
     <div class="container clearfix">
          <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo-.png">
+                <img src="static/image/logo.png">
             </div>
             <ul class="category">
                 <li><a href="#"><span>博客</span></a></li>
@@ -156,7 +156,7 @@
             <div class="comment-editor">
                 <vue-tinymce :setup="setup" :setting="setting" />
             </div>
-             <div class="submit">
+            <div class="submit">
                 <button class="btn" type="button"><span>发送</span></button>
             </div>
             <!-- <div class="return-top">
@@ -255,7 +255,6 @@ export default {
     }
 
     .container {
-        height: 3000px;
         width: 1160px;
         margin: auto;
     }
@@ -263,13 +262,15 @@ export default {
     .container .main {
         float: left;
         width: 835px;
-        border-right: 2px dashed #a6a6a6;
+        border-right: 2px dotted #a6a6a6;
     }
 
     .header {
         position: fixed;
         z-index: 1;
-        background-color: #f2f0f4;
+        height: 61.5px;
+        background-color: rgb(255 255 255 / 60%);
+        backdrop-filter: blur(5px);
         width: 100%;
     }
 
@@ -280,7 +281,6 @@ export default {
     }
 
     .header .logo img {
-        margin-top: 6px;
         max-width: 100px;
         height: auto
     }
@@ -323,6 +323,7 @@ export default {
         padding: 20px;
         max-width: 714px;
         background-color: #f3e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
 
     .main .title img {
@@ -340,6 +341,7 @@ export default {
         max-width: 714px;
         padding: 20px;
         background-color: #f3e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
 
     .main .supply-info {
@@ -347,6 +349,7 @@ export default {
         margin-bottom: 20px;
         padding: 20px;
         background-color: #f3e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
 
     .main .supply-info .info {
@@ -388,12 +391,14 @@ export default {
         margin-top:-40px;
         max-width: 78px;
         height: 78px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
 
     .main .comment-list li .message {
         float: right;
         width: 715px;
         background-color: #f3e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
 
     .main .comment-list .message .userinfo {
@@ -477,7 +482,7 @@ export default {
 
     .main .btn {
         float: right;
-        margin: 30px 80px 0 0;
+        margin: 30px 80px 50px 0;
         width: 101px;
         height: 38px;
         border: none;
@@ -629,7 +634,9 @@ export default {
         text-align: center;
         height: 50px;
         line-height: 50px;
+        font-style: oblique;
         width: 100%;
-        background-color: #FAEBD7;
+        background-color: rgb(255 255 255 / 60%);
+        backdrop-filter: blur(5px);
     }
 </style>

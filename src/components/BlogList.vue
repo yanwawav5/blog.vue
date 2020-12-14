@@ -3,7 +3,7 @@
     <div class="container clearfix">
         <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo-.png">
+                <img src="static/image/logo.png">
             </div>
             <ul class="category">
                 <li><a href="#"><span>博客</span></a></li>
@@ -33,7 +33,7 @@
                             <i>发布于2020年11月23号</i>
                             <!-- <span class="publish"></span> -->
                         </div>
-                        <div class="tag"><button type="button" style="width:60px;">工作</button> <button type="button" style="width:60px;">探索</button> <span>></span></div> 
+                        <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
                      <li>
                         <p class="title">DJI digital FPV system: Review, Activation, Firmware Upgrade</p>
@@ -47,7 +47,7 @@
                             <i>发布于2020年11月23号</i>
                             <!-- <span class="publish"></span> -->
                         </div>
-                        <div class="tag"><button type="button" style="width:60px;">工作</button> <button type="button" style="width:60px;">探索</button> <span>></span></div> 
+                        <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
                      <li>
                         <p class="title">DJI digital FPV system: Review, Activation, Firmware Upgrade</p>
@@ -61,7 +61,7 @@
                             <i>发布于2020年11月23号</i>
                             <!-- <span class="publish"></span> -->
                         </div>
-                        <div class="tag"><button type="button" style="width:60px;">工作</button> <button type="button" style="width:60px;">探索</button> <span>></span></div> 
+                        <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
                      <li>
                         <p class="title">DJI digital FPV system: Review, Activation, Firmware Upgrade</p>
@@ -75,7 +75,7 @@
                             <i>发布于2020年11月23号</i>
                             <!-- <span class="publish"></span> -->
                         </div>
-                        <div class="tag"><button type="button" style="width:60px;">工作</button> <button type="button" style="width:60px;">探索</button> <span>></span></div> 
+                        <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
                      <li>
                         <p class="title">DJI digital FPV system: Review, Activation, Firmware Upgrade</p>
@@ -89,12 +89,12 @@
                             <i>发布于2020年11月23号</i>
                             <!-- <span class="publish"></span> -->
                         </div>
-                        <div class="tag"><button type="button" style="width:60px;">工作</button> <button type="button" style="width:60px;">探索</button> <span>></span></div> 
+                        <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div>  
                     </li>
                 </ul>
             </div>
-            <!-- <div class="pagination">分页</div>
-            <div class="to-top"><button type="button">返回顶部<i></i></button></div> -->
+            <!-- <div class="pagination">分页</div> -->
+            <div class="to-top"><button type="button">返回顶部<i class="iconfont icon-fanhuidingbu2"></i></button></div>
         </div>
         <aside class="sidebar">
             <!-- <input type="text" placeholder="搜索" /> -->
@@ -171,12 +171,14 @@
     .container .main {
         float: left;
         width: 835px;
-        border-right: 2px dashed #a6a6a6;
+        border-right: 2px dotted #a6a6a6;
     }
 
     .header {
         position: fixed;
-        background-color: #f2f0f4;
+        height: 61.5px;
+        background-color: rgb(255 255 255 / 60%);
+        backdrop-filter: blur(5px);
         width: 100%;
     }
 
@@ -187,7 +189,6 @@
     }
 
     .header .logo img {
-        margin-top: 6px;
         max-width: 100px;
         height: auto
     }
@@ -293,10 +294,35 @@
         margin: 0 20px 20px 20px;
     }
 
-    .blogs .tag span {
+    .blogs .tag button {
+        margin-right: 10px;
+        width:60px;
+        height: 24px;
+        color: white;
+        font-style: oblique;
+        border: none;
+        background-color: #ff5733;
+    }
+
+    .blogs .tag i  {
         float: right;
-        font-size: 25px;
-        font-weight: bold;
+        /* font-size: 25px; */
+        /* font-weight: bold; */
+    }
+
+    .main .to-top button {
+        float: right;
+        margin: 30px 80px 50px 0;
+        width: 101px;
+        height: 38px;
+        border: none;
+        background-color: #ff5733;
+        color: white;
+        font-size: 16px;
+    }
+
+     .main .to-top i {
+        margin-left: 7px;
     }
 
     .container .sidebar {
@@ -439,7 +465,9 @@
         text-align: center;
         height: 50px;
         line-height: 50px;
+        font-style: oblique;
         width: 100%;
-        background-color: #FAEBD7;
+        background-color: rgb(255 255 255 / 60%);
+        backdrop-filter: blur(5px);
     }
 </style>
