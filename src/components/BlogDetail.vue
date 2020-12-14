@@ -153,17 +153,22 @@
                     </li>
                 </ul>
             </div>
-            <div class="return-top">
-                <button><span>返回顶部</span><i class="iconfont icon-fanhuidingbu2"></i></button>
+            <div class="comment-editor">
+                <vue-tinymce :setup="setup" :setting="setting" />
             </div>
+             <div class="submit">
+                <button class="btn" type="button"><span>发送</span></button>
+            </div>
+            <!-- <div class="return-top">
+                <button class="btn" type="button"><span>返回顶部</span><i class="iconfont icon-fanhuidingbu2"></i></button>
+            </div> -->
         </div>
         <aside class="sidebar">
             <!-- <input type="text" placeholder="搜索" /> -->
              <el-input
                 class="search"
                 placeholder="请输入内容"
-                prefix-icon="el-icon-search"
-                v-model="input2">
+                prefix-icon="el-icon-search">
             </el-input>
             <div class="tags">
                 <ul>
@@ -197,8 +202,32 @@
         © 2020 八嘎哥.
     </div>
 </div>
-   
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            setting: {
+                menubar: false,
+                toolbar:
+                "undo redo | fullscreen | forecolor backcolor emoticons | formatselect alignleft aligncenter alignright alignjustify | link unlink | numlist bullist | image media table | fontselect fontsizeselect forecolor backcolor | bold italic underline strikethrough | indent outdent | superscript subscript | removeformat |",
+                toolbar_drawer: "sliding",
+                quickbars_selection_toolbar:
+                "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
+                plugins: "link image media table lists fullscreen quickbars emoticons ",
+                language: "zh_CN", //本地化设置
+                height: 230,
+            }
+        };
+    },
+    methods: {
+        setup(editor) {
+            console.log(editor);
+        }
+    }
+}
+</script>
 
 <style scoped>
     .icon {
@@ -442,7 +471,11 @@
         float: right;
     } */
 
-    .main .return-top button {
+    .main .comment-editor {
+        max-width: 754px;
+    }
+
+    .main .btn {
         float: right;
         margin: 30px 80px 0 0;
         width: 101px;

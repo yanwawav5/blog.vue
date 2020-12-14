@@ -101,8 +101,7 @@
              <el-input
                 class="search"
                 placeholder="请输入内容"
-                prefix-icon="el-icon-search"
-                v-model="input2">
+                prefix-icon="el-icon-search">
             </el-input>
             <div class="tags">
                 <ul>
