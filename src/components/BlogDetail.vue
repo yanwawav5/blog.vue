@@ -3,7 +3,7 @@
     <div class="container clearfix">
          <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo.png">
+                <img src="static/image/logo-.png">
             </div>
             <ul class="category">
                 <li><a href="#"><span>博客</span></a></li>
@@ -153,6 +153,9 @@
                     </li>
                 </ul>
             </div>
+            <div class="return-top">
+                <button><span>返回顶部</span><i class="iconfont icon-fanhuidingbu2"></i></button>
+            </div>
         </div>
         <aside class="sidebar">
             <input type="text" placeholder="搜索" />
@@ -230,6 +233,7 @@
 
     .header {
         position: fixed;
+        z-index: 1;
         background-color: #f2f0f4;
         width: 100%;
     }
@@ -241,6 +245,7 @@
     }
 
     .header .logo img {
+        margin-top: 6px;
         max-width: 100px;
         height: auto
     }
@@ -324,9 +329,10 @@
     } */
 
     .main .number span {
-        background-color: #ccc6c6;
+        background-color: #ccc7c7;
         margin-right: 15px;
         padding: 0 4px;
+        color: #505050;
     }
 
     .main .comment-list {
@@ -430,14 +436,27 @@
         float: right;
     } */
 
-    
+    .main .return-top button {
+        float: right;
+        margin: 30px 80px 0 0;
+        width: 101px;
+        height: 38px;
+        border: none;
+        background-color: #ff5733;
+        color: white;
+        font-size: 16px;
+    }
 
-
+    .main .return-top i {
+        margin-left: 7px;
+    }
 
 
 
 
     .container .sidebar {
+        position: sticky;
+        top: 60px;
         float: left;
         margin-top: 114px;
         width: calc(100% - 839px);

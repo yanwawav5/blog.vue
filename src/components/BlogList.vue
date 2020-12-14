@@ -3,7 +3,7 @@
     <div class="container clearfix">
         <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo.png">
+                <img src="static/image/logo-.png">
             </div>
             <ul class="category">
                 <li><a href="#"><span>博客</span></a></li>
@@ -182,6 +182,7 @@
     }
 
     .header .logo img {
+        margin-top: 6px;
         max-width: 100px;
         height: auto
     }
@@ -294,6 +295,8 @@
     }
 
     .container .sidebar {
+        position: sticky;
+        top: 60px;
         float: left;
         margin-top: 114px;
         width: calc(100% - 839px);
