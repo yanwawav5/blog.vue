@@ -211,11 +211,11 @@ export default {
             setting: {
                 menubar: false,
                 toolbar:
-                "undo redo | fullscreen | forecolor backcolor emoticons | formatselect alignleft aligncenter alignright alignjustify | link unlink | numlist bullist | image media table | fontselect fontsizeselect forecolor backcolor | bold italic underline strikethrough | indent outdent | superscript subscript | removeformat |",
+                "undo redo | forecolor backcolor emoticons ",
                 toolbar_drawer: "sliding",
                 quickbars_selection_toolbar:
                 "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
-                plugins: "link image media table lists fullscreen quickbars emoticons ",
+                plugins: "link image media table lists quickbars emoticons ",
                 language: "zh_CN", //本地化设置
                 height: 230,
             }
@@ -362,9 +362,15 @@ export default {
         float: left;
     }
 
-    /* .main .supply-info .tags button {
-        width: ;
-    } */
+    .main .supply-info .tags button {
+        margin-right: 10px;
+        width:60px;
+        height: 24px;
+        color: white;
+        font-style: oblique;
+        border: none;
+        background-color: #ff5733;
+    }
 
     .main .number span {
         background-color: #ccc7c7;
