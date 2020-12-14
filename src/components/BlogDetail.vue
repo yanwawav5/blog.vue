@@ -158,7 +158,13 @@
             </div>
         </div>
         <aside class="sidebar">
-            <input type="text" placeholder="搜索" />
+            <!-- <input type="text" placeholder="搜索" /> -->
+             <el-input
+                class="search"
+                placeholder="请输入内容"
+                prefix-icon="el-icon-search"
+                v-model="input2">
+            </el-input>
             <div class="tags">
                 <ul>
                     <li><a href="#"><i class="iconfont icon-gongzuo" ></i><span>工作(21)</span></a></li>
@@ -458,14 +464,12 @@
         position: sticky;
         top: 60px;
         float: left;
-        margin-top: 114px;
+        margin-top: 160px;
         width: calc(100% - 839px);
     }
 
-    .sidebar input {
+    /* .sidebar input {
         display: block;
-        /* margin-left:auto;
-        margin-right:auto; */
         margin-bottom: 60px;
         margin-left: 39px;
         height: 25px;
@@ -475,6 +479,12 @@
     .sidebar input:focus {
         width: 200px;
         transition: width 1s;
+    } */
+
+    .sidebar .search {
+        margin-left: 40px;
+        margin-bottom: 30px;
+        width: 209px;
     }
 
     .sidebar .tags {
