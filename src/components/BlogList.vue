@@ -6,10 +6,11 @@
                 <img src="static/image/logo.png">
             </div>
             <ul class="category">
-                <li><a href="#"><span>博客</span></a></li>
+                <li v-for="item in this.category" :label="item.id" :key="item.id"><a @click="getBlogList({keyword: '', categoryId: item.id, tagId: ''})"><span>{{item.name}}</span></a></li>
+                <!-- <li><a href="#"><span>博客</span></a></li>
                 <li><a href="#"><span>记事薄</span></a></li>
                 <li><a href="#"><span>八嘎哥的</span></a></li>
-                <li><a href="#"><span>杂</span></a></li>
+                <li><a href="#"><span>杂</span></a></li> -->
             </ul>
         </div>
         <div class="main">
@@ -21,7 +22,23 @@
             </div>
             <div class="blogs">
                 <ul>
-                    <li>
+                     <li v-for="item in this.blogs" :label="item.id" :key="item.id">
+                        <p class="title">{{item.title}}</p>
+                        <div class="simple-content">
+                            <img :src="host + item.picUrl">
+                            <!-- <img src="static/image/cover.png"> -->
+                            <span class="text" >
+                                <!-- v-html="item.content" -->
+                                I’ve been pretty curious to dip into the HD FPV world for a while now, and after thinking about it for a short while, patiently waiting for the end of the winter and then another 2 months to get past the shipping issues around the COVID-19 pandemic, I finally made it! I got the DJI digital FPV system, and I’m so happy…
+                                <!-- I’ve been pretty curious to dip into the HD FPV world for a while now, and after thinking about it for a short while, patiently waiting for the end of the winter and then another 2 months to get past the shipping issues around the COVID-19 pandemic, I finally made it! I got the DJI digital FPV system, and I’m so happy… -->
+                            </span>
+                        </div>
+                        <div class="info">
+                            <i>发布于{{dateFormat(item.createAt)}}</i>
+                        </div>
+                        <div class="tag"><button v-for="tItem in item.tagList" :label="tItem.tagId" :key="tItem.tagId" type="button">{{tItem.tagName}}</button><i class="iconfont icon-xiangqing2"></i></div> 
+                    </li>
+                    <!-- <li>
                         <p class="title">DJI digital FPV system: Review, Activation, Firmware Upgrade</p>
                         <div class="simple-content">
                             <img src="static/image/cover.png">
@@ -31,7 +48,6 @@
                         </div>
                         <div class="info">
                             <i>发布于2020年11月23号</i>
-                            <!-- <span class="publish"></span> -->
                         </div>
                         <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
@@ -45,7 +61,6 @@
                         </div>
                         <div class="info">
                             <i>发布于2020年11月23号</i>
-                            <!-- <span class="publish"></span> -->
                         </div>
                         <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
@@ -59,7 +74,6 @@
                         </div>
                         <div class="info">
                             <i>发布于2020年11月23号</i>
-                            <!-- <span class="publish"></span> -->
                         </div>
                         <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
@@ -73,7 +87,6 @@
                         </div>
                         <div class="info">
                             <i>发布于2020年11月23号</i>
-                            <!-- <span class="publish"></span> -->
                         </div>
                         <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div> 
                     </li>
@@ -87,10 +100,9 @@
                         </div>
                         <div class="info">
                             <i>发布于2020年11月23号</i>
-                            <!-- <span class="publish"></span> -->
                         </div>
                         <div class="tag"><button type="button">工作</button> <button type="button">探索</button> <i class="iconfont icon-xiangqing2"></i></div>  
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- <div class="pagination">分页</div> -->
@@ -105,12 +117,13 @@
             </el-input>
             <div class="tags">
                 <ul>
-                    <li><a href="#"><i class="iconfont icon-gongzuo" ></i><span>工作(21)</span></a></li>
+                    <li v-for="item in tag" :label="item.tagId" :key="item.tagId"><a @click="getBlogList({keyword: '', categoryId: '', tagId: item.tagId})"><i class="iconfont" :class="item.iconFontClass"></i><span>{{item.tagName}}({{item.blogCount}})</span></a></li>
+                    <!-- <li><a href="#"><i class="iconfont icon-gongzuo" ></i><span>工作(21)</span></a></li>
                     <li><a href="#"><i class="iconfont icon-iconxuexinor" ></i><span>学习(34)</span></a></li>
                     <li><a href="#"><i class="iconfont icon-wenhuayule" ></i><span>娱乐(12)</span></a></li>
                     <li><a href="#"><i class="iconfont icon-yule" ></i><span>心情(4)</span></a></li>
                     <li><a href="#"><i class="iconfont icon-picture" ></i><span>随拍(13)</span></a></li>
-                    <li><a href="#"><i class="iconfont icon-other" ></i><span>其他(34)</span></a></li>
+                    <li><a href="#"><i class="iconfont icon-other" ></i><span>其他(34)</span></a></li> -->
                 </ul>
             </div>
             <div class="hot-header">
@@ -122,11 +135,12 @@
             </div>
             <div class="artcle-list">
                 <ul>
-                    <li><div class="t1 title"><i>1</i></div><a href="#"><span>今天的我很开心</span></a></li>
+                    <li v-for="(item,index) in this.hotBlogs" :label="item.id" :key="item.id"><div class="title" :class="`t${index+1}`"><i>{{index+1}}</i></div><a href="#"><span>{{item.name}}</span></a></li>
+                    <!-- <li><div class="t1 title"><i>1</i></div><a href="#"><span>今天的我很开心</span></a></li>
                     <li><div class="t2 title"><i>2</i></div><a href="#"><span>2020年，我完成...</span></a></li>
                     <li><div class="t3 title"><i>3</i></div><a href="#"><span>2020年的最后一场雪</span></a></li>
                     <li><div class="t4 title"><i>4</i></div><a href="#"><span>2020年的倒数第二场雪</span></a></li>
-                    <li><div class="t5 title"><i>5</i></div><a href="#"><span>2020年的最后一场雪</span></a></li>
+                    <li><div class="t5 title"><i>5</i></div><a href="#"><span>2020年的最后一场雪</span></a></li> -->
                 </ul>
             </div>
         </aside>
@@ -135,8 +149,90 @@
         © 2020 八嘎哥.
     </div>
 </div>
-   
 </template>
+
+<script>
+import moment from "moment";
+
+export default {
+    data() {
+        return {
+            host: "http://localhost:5000",
+            category: [],
+            tag: [],
+            hotBlogs: [],
+            condition: { keyword: '',categoryId: '', tagId: '' },
+            blogs: [],
+            // tagList: [],
+            // blogs: [{id,title,content,createAt,viewTimes,commentTimes,likeTimes,picUrl,tagList}]
+            currentPage: 1,
+            pageSize: 50,
+        }
+    },
+    created() {
+        this.$http.get("api/category/categorylist").then((response) => {
+            if (!response) {
+                this.$message({
+                showClose: true,
+                message: "获取博客分类失败",
+                type: "error",
+                });
+            } else {
+                this.category = response.data.response;
+            }
+        });
+
+        this.$http.get("api/tag/get").then((response) => {
+             if (!response) {
+                this.$message({
+                showClose: true,
+                message: "获取博客标签失败",
+                type: "error",
+                });
+            } else {
+                this.tag = response.data.response;
+            }
+        });
+
+        this.$http.get("api/blog/topBlogList").then((response) => {
+             if (!response) {
+                this.$message({
+                showClose: true,
+                message: "获取热门博客失败",
+                type: "error",
+                });
+            } else {
+                this.hotBlogs = response.data.response;
+            }
+        });
+       
+       this.getBlogList(this.condition)
+    },
+    methods: {
+        /*日期处理*/
+        dateFormat(date) {
+             if (date === undefined || date === null) {
+                return "";
+            }
+            return moment(date).format("YYYY年MM月DD号");
+        },
+        getBlogList(param) {
+            this.condition = param
+             this.$http.post(`api/blog/blogList?pageIndex=${this.currentPage}&pageSize=${this.pageSize}`,this.condition).then((response) => {
+             if (!response) {
+                this.$message({
+                showClose: true,
+                message: "获取博客列表失败",
+                type: "error",
+                });
+            } else {
+                this.blogs = response.data.data;
+            }
+        })
+        }
+    }
+}
+</script>
 
 <style scoped>
     .icon {
@@ -271,10 +367,14 @@
 
     .blogs .simple-content img {
         float: left;
+        max-width: 340px;
+        max-height: 169px;
         padding-right: 40px;
     }
 
     .blogs .simple-content .text {
+        max-width: 579px;
+        max-height: 105px;
         font-size: 16px;
         color: #505050;
     }
