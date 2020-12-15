@@ -50,7 +50,7 @@
                                     <span class="name">@八嘎哥</span> 
                                     <span class="addr">中国-上海<i>#2</i></span>
                                 </div>
-                                <div class="reply"><span>是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，
+                                <div class="reply"><span v-html="test">是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，
                                     需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新是的，需要设置一下，才会更新</span></div>
                                 <div class="otherinfo">
                                     <span class="date"><i>2020/10/28  12:23:20</i></span>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </li>
-                     <li>
+                     <!-- <li>
                         <div class="comment clearfix">
                             <img class="gravatar" src="static/image/gravatar.jpg">
                             <div class="message">
@@ -122,14 +122,14 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="comment-editor">
-                <vue-tinymce :setup="setup" :setting="setting" />
+                <vue-tinymce :setup="setup" :setting="setting" v-model="test" />
             </div>
             <div class="submit">
-                <button class="btn" type="button"><span>发送</span></button>
+                <button class="btn" type="button" @click="sendComment()"><span>发送</span></button>
             </div>
             <!-- <div class="return-top">
                 <button class="btn" type="button"><span>返回顶部</span><i class="iconfont icon-fanhuidingbu2"></i></button>
@@ -175,10 +175,11 @@
 
 <script>
 import moment from "moment";
-
+import Prism from "prismjs";//引入插件
 export default {
     data() {
         return {
+            test: '',
             host: "http://localhost:5001",
             category: [],
             tag: [],
@@ -186,19 +187,21 @@ export default {
             setting: {
                 menubar: false,
                 toolbar:
-                "undo redo | forecolor backcolor emoticons ",
+                "undo redo | codesample | forecolor backcolor emoticons ",
                 toolbar_drawer: "sliding",
                 quickbars_selection_toolbar:
                 "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
-                plugins: "link image media table lists quickbars emoticons ",
+                plugins: "link image media table lists quickbars emoticons codesample",
                 language: "zh_CN", //本地化设置
                 height: 230,
+                codesample_global_prismjs: true,
+                content_css: "./assets/css/prism.css",
             },
             blog: {categoryName: '',commentTimes: '',content: '',createAt: '', likeTimes: '',picUrl: '',tagNameList: [],title: '',viewTimes: ''}
         };
     },
-    mounted() {
-        Prismjs.highlightAll()
+    async mounted() {
+       await Prism.highlightAll()
     },
     created() {
         this.$http.get("api/category/categorylist").then((response) => {

@@ -6,6 +6,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import tinymce from 'tinymce'
 import VueTinymce from '@packy-tang/vue-tinymce'
 import axios from 'axios'
+
+// import './assets/prism/prism.css'
+// import Prism from 'prismjs'
+// Vue.use(Prism)
+// Prism.highlightAll()
 //全局注册axios
 Vue.prototype.$http = axios
 Vue.prototype.$http.defaults.baseURL = 'http://localhost:5001/'
@@ -30,8 +35,3 @@ router.afterEach((to,from,next)=>{
 import './assets/icon/iconfont.css'
 import './assets/icon/iconfont.js'
 
-// import Prismjs from '../static/prism/prism.js'
-// import prismCss from '../static/prism/prism.css'
-// Prismjs.highlightAll()
-// Vue.use(Prismjs)
-// Vue.use(prismCss)
