@@ -8,7 +8,7 @@ import VueTinymce from '@packy-tang/vue-tinymce'
 import axios from 'axios'
 //全局注册axios
 Vue.prototype.$http = axios
-Vue.prototype.$http.defaults.baseURL = 'http://localhost:5000/'
+Vue.prototype.$http.defaults.baseURL = 'http://localhost:5001/'
 
 Vue.config.productionTip = false
 
@@ -22,5 +22,16 @@ new Vue({
   render: h => h(App)
 })
 
+// vue跳转新页面后回到顶部
+router.afterEach((to,from,next)=>{
+　　　　window,scrollTo(0,0)
+　　})
+
 import './assets/icon/iconfont.css'
 import './assets/icon/iconfont.js'
+
+// import Prismjs from '../static/prism/prism.js'
+// import prismCss from '../static/prism/prism.css'
+// Prismjs.highlightAll()
+// Vue.use(Prismjs)
+// Vue.use(prismCss)

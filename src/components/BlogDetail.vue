@@ -3,7 +3,12 @@
     <div class="container clearfix">
          <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo.png">
+                 <router-link
+                    :to="{path:'/BlogList'}"
+                    style="text-decoration: none;"
+                 >
+                    <img src="static/image/logo.png">
+                </router-link>
             </div>
             <ul class="category">
                 <li v-for="item in this.category" :label="item.id" :key="item.id"><a @click="getBlogList({keyword: '', categoryId: item.id, tagId: ''})"><span>{{item.name}}</span></a></li>
@@ -24,12 +29,12 @@
                 <span class="tag-area">相关标签：</span>
                 <div class="tags"><button type="button" v-for="item in this.blog.tagNameList" :key="item">{{item}}</button></div>
             </div>
-            <div class="number"><span>21条评论</span>
+            <div class="number"><span>{{this.blog.commentTimes}}条评论</span>
                 <span>
                     <svg class="icon closeImg" aria-hidden="true">
                         <use xlink:href="#icon-aixin"></use>
                     </svg>
-                    12个人觉得很赞
+                    {{this.blog.likeTimes}}个人觉得很赞
                 </span>
             </div>
             <div class="comment-list">
@@ -149,7 +154,15 @@
             </div>
             <div class="artcle-list">
                 <ul>
-                    <li v-for="(item,index) in this.hotBlogs" :label="item.id" :key="item.id"><div class="title" :class="`t${index+1}`"><i>{{index+1}}</i></div><a href="#"><span>{{item.name}}</span></a></li>
+                    <li v-for="(item,index) in this.hotBlogs" :label="item.id" :key="item.id">
+                        <router-link
+                            :to="{path:'/BlogDetail',query:{id: item.id}}"
+                            @click.native ="flushPage"
+                            style="text-decoration: none;"
+                        >
+                            <div class="title" :class="`t${index+1}`"><i>{{index+1}}</i></div><a href="#"><span>{{item.name}}</span></a>
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -166,7 +179,7 @@ import moment from "moment";
 export default {
     data() {
         return {
-            host: "http://localhost:5000",
+            host: "http://localhost:5001",
             category: [],
             tag: [],
             hotBlogs: [],
@@ -184,7 +197,10 @@ export default {
             blog: {categoryName: '',commentTimes: '',content: '',createAt: '', likeTimes: '',picUrl: '',tagNameList: [],title: '',viewTimes: ''}
         };
     },
-     created() {
+    mounted() {
+        Prismjs.highlightAll()
+    },
+    created() {
         this.$http.get("api/category/categorylist").then((response) => {
             if (!response) {
                 this.$message({
@@ -233,19 +249,22 @@ export default {
             return moment(date).format("YYYY/MM/DD");
         },
         blogDetail() {
-             this.$http.get(`api/blog/blogDetail?id=${this.$route.query.id}`).then((response) => {
-             if (!response) {
-                this.$message({
-                showClose: true,
-                message: "获取博客详情失败",
-                type: "error",
-                });
-            } else {
-                this.blog = response.data.response;
-            }
-        })
+            this.$http.get(`api/blog/blogDetail?id=${this.$route.query.id}`).then((response) => {
+                if (!response) {
+                    this.$message({
+                    showClose: true,
+                    message: "获取博客详情失败",
+                    type: "error",
+                    });
+                } else {
+                    this.blog = response.data.response;
+                }
+            })
         },
-         setup(editor) {
+        flushPage() {
+            this.$router.go(0)
+        },
+        setup(editor) {
             console.log(editor);
         }
     }
@@ -322,6 +341,7 @@ export default {
          font-size:25px;
          font-weight: bold;
          color: #505050;
+         cursor: pointer;
     }
 
     .header .category li a {
@@ -567,7 +587,7 @@ export default {
         /* width: 87px; */
         list-style: none;
         margin: 10px 30px 10px 0;
-        /* background-color: #a6a6a6; */
+        cursor: pointer;
     }
 
     .sidebar .tags li i {

@@ -3,7 +3,12 @@
     <div class="container clearfix">
         <div class="header clearfix">
             <div class="logo">
-                <img src="static/image/logo.png">
+                 <router-link
+                    :to="{path:'/BlogList'}"
+                    style="text-decoration: none;"
+                 >
+                    <img src="static/image/logo.png">
+                 </router-link>
             </div>
             <ul class="category">
                 <li v-for="item in this.category" :label="item.id" :key="item.id"><a @click="getBlogList({keyword: '', categoryId: item.id, tagId: ''})"><span>{{item.name}}</span></a></li>
@@ -128,7 +133,15 @@
             </div>
             <div class="artcle-list">
                 <ul>
-                    <li v-for="(item,index) in this.hotBlogs" :label="item.id" :key="item.id"><div class="title" :class="`t${index+1}`"><i>{{index+1}}</i></div><a href="#"><span>{{item.name}}</span></a></li>
+                    <li v-for="(item,index) in this.hotBlogs" :label="item.id" :key="item.id">
+                        <div class="title" :class="`t${index+1}`"><i>{{index+1}}</i></div> 
+                         <router-link
+                            :to="{path:'/BlogDetail',query:{id: item.id}}"
+                            style="text-decoration: none;"
+                        >
+                            <a href="#"><span>{{item.name}}</span></a>
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -145,7 +158,7 @@ import moment from "moment";
 export default {
     data() {
         return {
-            host: "http://localhost:5000",
+            host: "http://localhost:5001",
             category: [],
             tag: [],
             hotBlogs: [],
